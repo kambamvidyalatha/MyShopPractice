@@ -3,12 +3,14 @@ import React, { useRef } from 'react';
 const Addproduct = () => {
     const productname = useRef();
     const productcost = useRef();
+    const productimg = useRef();
     const submitform = (e)=>{
         e.preventDefault();
         //console.log(productname.current.value,productcost.current.value)
         const newproduct = {
             productname : productname.current.value,
-            productcost : productcost.current.value
+            productcost : productcost.current.value,
+            Productimg  : productimg.current.value
         }
         console.log(newproduct)
         fetch('https://api.mlab.com/api/1/databases/abcd/collections/products?apiKey=ClSj0HxNv3sPJwS3cZOsbZI9exWxVjqz',{
@@ -32,6 +34,10 @@ const Addproduct = () => {
                 <div className="form-group">
                     <label >Product Cost:</label>
                     <input type="text" className="form-control" placeholder="Enter Product cost" ref={productcost}/>
+                </div>
+                <div className="form-group">
+                    <label >Product Image Url:</label>
+                    <input type="text" className="form-control" ref={productimg} placeholder="Enter Product Image Url" id="productimg"/>
                 </div>
                 
                 <button type="submit" className="btn btn-primary">Submit</button>
