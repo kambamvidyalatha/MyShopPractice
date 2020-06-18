@@ -14,9 +14,7 @@ function App() {
         <Route path="./productspage">
           <Productpage></Productpage>
         </Route>
-        <Route path="./AddProduct">
-          <Addproduct></Addproduct>
-        </Route>
+        
       </div>
     </BrowserRouter>
   );
